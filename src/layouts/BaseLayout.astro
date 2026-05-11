@@ -17,13 +17,13 @@ interface Props {
     | 'terms-conditions';
 }
 
-const site = Astro.site ?? new URL('https://www.villa-vert-bocage.co.uk');
+const site = Astro.site ?? new URL('https://villa-vert-bocage.com');
 const {
   title,
   description,
   canonicalPath,
   bodyClass = '',
-  ogImage = 'https://www.villa-vert-bocage.co.uk/wp-content/uploads/2018/05/cropped-P4160262.jpg',
+  ogImage = 'https://villa-vert-bocage.com/wp-content/uploads/2018/05/cropped-P4160262.jpg',
   activeNav,
 } = Astro.props;
 
