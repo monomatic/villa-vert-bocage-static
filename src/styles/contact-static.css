@@ -1,0 +1,22 @@
+.contact-static-box {
+  padding: 1rem 0 2rem;
+}
+
+.contact-static-lead {
+  margin-bottom: 1.5rem;
+}
+
+.contact-static-actions {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.contact-static-actions li {
+  margin-bottom: 0.75rem;
+}
+
+.contact-static-note {
+  font-size: 0.95rem;
+  color: #484848;
+}

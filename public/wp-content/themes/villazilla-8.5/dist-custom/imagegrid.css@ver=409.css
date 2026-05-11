@@ -1,0 +1,155 @@
+.u-align-center {
+  text-align: center;
+}
+.u-align-right {
+  text-align: right;
+}
+.image-grid .ig-block {
+  padding: 0;
+}
+.image-grid .ig-block .ig-inner {
+  position: relative;
+}
+.image-grid .ig-block .ig-inner .ig-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: auto;
+  xmargin: 0 auto;
+  text-align: center;
+  background: rgba(50, 50, 50, 0.5);
+  padding: 12px;
+  color: #fff;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+.image-grid .ig-block .ig-inner .ig-overlay a {
+  color: #fff;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+.image-grid .ig-block .ig-inner .ig-overlay .ig-overlay-bt a {
+  color: #fff;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 12px;
+}
+.image-grid .ig-block .ig-inner .button-cont {
+  position: absolute;
+  bottom: -39px;
+  right: 0px;
+}
+.image-grid .ig-block .ig-inner .button-cont .ig-cust-bt {
+  font-family: 'Garamond';
+  color: #DFDADA !important;
+  padding-top: 0.4em;
+  font-size: 1.0em;
+  font-style: italic;
+  float: left;
+  margin-left: 3px;
+}
+.image-grid .ig-block .ig-inner.tint {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 5px 5px;
+}
+.image-grid .ig-block .ig-inner.tint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all .3s linear;
+}
+.image-grid .ig-block .ig-inner.tint:hover:before {
+  background: none;
+}
+.image-grid .ig-block .ig-inner .ig-overlay {
+  text-shadow: 1px 1px 1px #000000;
+  position: absolute;
+  top: 12px !important;
+  left: 12px;
+  width: auto;
+  xmargin: 0 auto;
+  text-align: center;
+  background: rgba(50, 50, 50, 0.5);
+  border-bottom: $accent solid 1px;
+  padding: 12px;
+  color: #fff;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+.image-grid .ig-block .ig-inner .ig-overlay-st {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7em;
+  color: #F0DFAD;
+}
+.image-grid .ig-block .ig-inner .ig-overlay-bt {
+  font-family: 'Garamond';
+  padding-top: 0.4em;
+  font-size: 0.6em;
+  font-style: italic;
+}
+.image-grid .ig-block .ig-inner .btn-primary,
+.image-grid .ig-block .ig-inner .comment-form input[type=submit] {
+  color: #fff;
+  background-color: #5b5b5b;
+  border-color: #5b5b5b;
+}
+.image-grid .ig-block .ig-inner hr {
+  display: block;
+  height: 1px;
+  width: 60%;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: auto;
+  padding: 0;
+}
+.image-grid .ig-block .ig-inner.portfolio {
+  margin-bottom: 40px;
+}
+.image-grid .ig-block .ig-inner.portfolio .ig-overlay {
+  font-family: 'Oswald', sans-serif;
+  top: 100% !important;
+  color: #888080;
+  font-size: 1.2em;
+  text-align: left;
+  text-shadow: 0px 0px 0px #000000;
+}
+.image-grid .ig-block .ig-inner.portfolio .ig-overlay-st {
+  font-family: 'Garamond';
+  font-size: 1.2em;
+  color: #888080;
+  font-style: italic;
+  padding-bottom: 50px;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .image-grid .ig-block .ig-inner.portfolio {
+    padding: 20px;
+    margin-bottom: 10px !important;
+  }
+  .image-grid .ig-block .ig-inner.portfolio .ig-overlay {
+    top: 96% !important;
+  }
+}
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+  .image-grid .ig-block .ig-inner.portfolio {
+    padding: 40px;
+    margin-bottom: 10px;
+  }
+  .image-grid .ig-block .ig-inner.portfolio .ig-overlay {
+    top: 95% !important;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1800px) {
+  .image-grid .ig-block .ig-inner.portfolio {
+    padding: 80px;
+    margin-bottom: 10px;
+  }
+  .image-grid .ig-block .ig-inner.portfolio .ig-overlay {
+    top: 92% !important;
+  }
+}
+/*# sourceMappingURL=imagegrid.css.map */

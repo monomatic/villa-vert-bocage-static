@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import hero from '../../content/le-rouret-hero.html?raw';
+import main from '../../content/le-rouret-main.html?raw';
+
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: { '@id': `${Astro.site}#`, name: 'Vert Bocage' },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: { '@id': `${Astro.site}le-rouret/`, name: 'Le Rouret' },
+    },
+  ],
+});
+---
+
+<BaseLayout
+  title="Le Rouret | Villa Rental South of France – Vert Bocage"
+  description="Discover Le Rouret and the area around Villa Vert Bocage — a charming Provencal village in the South of France."
+  canonicalPath="/le-rouret/"
+  activeNav="le-rouret"
+  bodyClass="wp-singular page wp-theme-villazilla-85 sidebar-primary"
+>
+  <script slot="head" type="application/ld+json" set:html={breadcrumbLd} />
+  <div slot="hero" set:html={hero} />
+  <div set:html={main} />
+</BaseLayout>

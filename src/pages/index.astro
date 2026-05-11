@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import homeHero from '../content/home-hero.html?raw';
+import homeMain from '../content/home-main.html?raw';
+
+const siteLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  url: Astro.site?.href ?? 'https://www.villa-vert-bocage.co.uk/',
+  name: 'Villa Rental South of France – Vert Bocage',
+});
+---
+
+<BaseLayout
+  title="Vert Bocage | Holiday villa rental South of France"
+  description="Vert Bocage, a family villa rental in the South Of France situated in the charming Provencal village of Le Rouret, 20 minutes from Nice Côte d'Azur."
+  canonicalPath="/"
+  activeNav="home"
+  bodyClass="home wp-singular page wp-theme-villazilla-85"
+>
+  <script slot="head" type="application/ld+json" set:html={siteLd} />
+  <div slot="hero" set:html={homeHero} />
+  <div set:html={homeMain} />
+</BaseLayout>

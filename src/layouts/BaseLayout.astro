@@ -1,0 +1,215 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  /** Path with slashes, e.g. `/contact/` */
+  canonicalPath: string;
+  bodyClass?: string;
+  ogImage?: string;
+  activeNav?:
+    | 'home'
+    | 'le-rouret'
+    | 'local-info'
+    | 'whats-on'
+    | 'location'
+    | 'contact'
+    | 'privacy-policy'
+    | 'terms-conditions';
+}
+
+const site = Astro.site ?? new URL('https://www.villa-vert-bocage.co.uk');
+const {
+  title,
+  description,
+  canonicalPath,
+  bodyClass = '',
+  ogImage = 'https://www.villa-vert-bocage.co.uk/wp-content/uploads/2018/05/cropped-P4160262.jpg',
+  activeNav,
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, site).href;
+const orgLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  url: site.href,
+  name: 'Villa Rental South of France – Vert Bocage',
+});
+
+const is = (key: NonNullable<typeof activeNav>) => activeNav === key;
+
+const canvasWrap = { canvas: 'container' } as Record<string, string>;
+const offCanvasNav = {
+  'off-canvas': 'id-1 left reveal',
+} as Record<string, string>;
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Villa Rental South of France – Vert Bocage" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="google-site-verification" content="Zdims09XUqMUOiFGHfQjdq9tdrpxUY6eeU2ruRpDZ4U" />
+    <slot name="head" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128632811-1"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-128632811-1');
+    </script>
+    <script type="application/ld+json" set:html={orgLd} />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" />
+    <link rel="dns-prefetch" href="https://code.jquery.com/" />
+    <link rel="stylesheet" href="/wp-assets/wp-inline.css" />
+    <link rel="stylesheet" href="/wp-includes/css/dist/block-library/style.min.css@ver=6.9.4.css" />
+    <link rel="stylesheet" href="/wp-content/themes/villazilla-8.5/dist/styles/main.css@ver=958.css" />
+    <link rel="stylesheet" href="/wp-content/themes/villazilla-8.5/dist-custom/custom.css@ver=900.css" />
+    <link rel="stylesheet" href="/wp-content/themes/villazilla-8.5/dist-custom/imagegrid.css@ver=52.css" />
+    <link rel="stylesheet" href="/wp-content/themes/villazilla-8.5/dist-custom/static.css@ver=61.css" />
+  </head>
+  <body class={bodyClass}>
+    <div {...offCanvasNav} class="main-menu left shift">
+      <ul id="menu-mobile-navigation" class="menu">
+        <li class:list={['menu-item', 'menu-villa-vert-bocage', is('home') && 'active']}>
+          <a href="/" aria-current={is('home') ? 'page' : undefined}>Villa Vert Bocage</a>
+        </li>
+        <li class:list={['menu-item', 'menu-le-rouret', is('le-rouret') && 'active']}>
+          <a href="/le-rouret/" aria-current={is('le-rouret') ? 'page' : undefined}>Le Rouret</a>
+        </li>
+        <li class:list={['menu-item', 'menu-local-area', is('local-info') && 'active']}>
+          <a href="/local-info/" aria-current={is('local-info') ? 'page' : undefined}>Local Area</a>
+        </li>
+        <li class:list={['menu-item', 'menu-whats-on', is('whats-on') && 'active']}>
+          <a href="/whats-on-near-nice-and-antibes/" aria-current={is('whats-on') ? 'page' : undefined}
+            >What&rsquo;s on</a
+          >
+        </li>
+        <!-- <li class:list={['menu-item', 'menu-news-events', is('news-events') && 'active']}>
+          <a href="/news-events/" aria-current={is('news-events') ? 'page' : undefined}>News &amp; Events</a>
+        </li> -->
+        <li class:list={['menu-item', 'menu-location', is('location') && 'active']}>
+          <a href="/location-travel-information/" aria-current={is('location') ? 'page' : undefined}>Location</a>
+        </li>
+        <li class:list={['menu-item', 'menu-contact', is('contact') && 'active']}>
+          <a href="/contact/" aria-current={is('contact') ? 'page' : undefined}>Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div {...canvasWrap}>
+      <header class="banner">
+        <div class="container-fluid fixed-top-nav">
+          <nav class="navbar navbar-expand-md navbar-light bg-faded">
+            <a class="navbar-brand" href="/">
+              <h3 class="site-name">Villa Rental South of France – Vert Bocage</h3>
+              <h4 class="site-description">Holiday villa rental South of France</h4>
+            </a>
+
+            <button id="slide-toggle" class="navbar-toggler" type="button" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="secondary-nav">
+              <ul id="menu-secondary-navigation" class="menu">
+                <li class="facebook-follow menu-item menu-facebook">
+                  <a href="https://www.facebook.com/VillaVertBocage/">Facebook</a>
+                </li>
+                <li class:list={['menu-item', 'menu-news-events', is('news-events') && 'active']}>
+                  <a href="/news-events/" aria-current={is('news-events') ? 'page' : undefined}>News &amp; Events</a>
+                </li>
+                <li class:list={['menu-item', 'menu-contact', is('contact') && 'active']}>
+                  <a href="/contact/" aria-current={is('contact') ? 'page' : undefined}>Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div id="bs4navbar" class="collapse navbar-collapse">
+              <ul id="menu-main-menu" class="navbar-nav ml-auto">
+                <li class:list={['menu-item', 'menu-villa', 'nav-item', is('home') && 'active']}>
+                  <a href="/" class:list={['nav-link', is('home') && 'active']} aria-current={is('home') ? 'page' : undefined}>Villa</a>
+                </li>
+                <li class:list={['menu-item', 'menu-le-rouret', 'nav-item', is('le-rouret') && 'active']}>
+                  <a href="/le-rouret/" class="nav-link" aria-current={is('le-rouret') ? 'page' : undefined}>Le Rouret</a>
+                </li>
+                <li class:list={['menu-item', 'menu-local-area', 'nav-item', is('local-info') && 'active']}>
+                  <a href="/local-info/" class="nav-link" aria-current={is('local-info') ? 'page' : undefined}>Local Area</a>
+                </li>
+                <li class:list={['menu-item', 'menu-whats-on', 'nav-item', is('whats-on') && 'active']}>
+                  <a
+                    href="/whats-on-near-nice-and-antibes/"
+                    class="nav-link"
+                    aria-current={is('whats-on') ? 'page' : undefined}>What&rsquo;s on</a
+                  >
+                </li>
+                <li class:list={['menu-item', 'menu-location', 'nav-item', is('location') && 'active']}>
+                  <a href="/location-travel-information/" class="nav-link" aria-current={is('location') ? 'page' : undefined}>Location</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <slot name="hero" />
+
+      <div class="wrap container" role="document">
+        <div class="content row">
+          <main class="main">
+            <slot />
+          </main>
+        </div>
+      </div>
+
+      <footer class="content-info">
+        <div class="container">
+          <div class="row d-flex flex-wrap justify-content-around pt-2"></div>
+        </div>
+        <div class="container-fluid text-light bg-dark mt-5 pt-1">
+          <div class="row justify-content-center">
+            <div class="sub-footer">
+              <ul id="menu-footer-menu" class="menu">
+                <li class:list={['menu-item', 'menu-contact', is('contact') && 'active']}>
+                  <a href="/contact/" aria-current={is('contact') ? 'page' : undefined}>Contact</a>
+                </li>
+                <!-- <li class:list={['menu-item', 'menu-terms-conditions', is('terms-conditions') && 'active']}>
+                  <a href="/terms-conditions/" aria-current={is('terms-conditions') ? 'page' : undefined}>Terms &amp; Conditions</a>
+                </li> -->
+                <li class:list={['menu-item', 'menu-privacy-policy', is('privacy-policy') && 'active']}>
+                  <a href="/privacy-policy/" aria-current={is('privacy-policy') ? 'page' : undefined}>Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row justify-content-around">
+            <h3>&copy; Copyright {new Date().getFullYear()} - Vert Bocage Villa</h3>
+          </div>
+        </div>
+      </footer>
+
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <script is:inline>
+        window.jQuery || document.write('<script src="/wp-includes/js/jquery/jquery.js"><\/script>');
+      </script>
+      <script src="/wp-content/themes/villazilla-8.5/dist/scripts/main.js" defer></script>
+    </div>
+  </body>
+</html>

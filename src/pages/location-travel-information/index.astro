@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import main from '../../content/location-main.html?raw';
+
+const breadcrumbLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: { '@id': `${Astro.site}#`, name: 'Vert Bocage' },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@id': `${Astro.site}location-travel-information/`,
+        name: 'Location & travel information',
+      },
+    },
+  ],
+});
+---
+
+<BaseLayout
+  title="Location & Travel Information | Villa Vert Bocage"
+  description="How to reach Villa Vert Bocage in Le Rouret — maps, travel and practical information for your stay."
+  canonicalPath="/location-travel-information/"
+  activeNav="location"
+  bodyClass="wp-singular page wp-theme-villazilla-85 sidebar-primary"
+>
+  <script slot="head" type="application/ld+json" set:html={breadcrumbLd} />
+  <div set:html={main} />
+</BaseLayout>
