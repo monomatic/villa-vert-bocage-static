@@ -1,0 +1,4 @@
+# Cloudflare Pages — build output (do not set dashboard "root" to dist; keep root = /)
+name = "villa-vert-bocage-static"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = "./dist"

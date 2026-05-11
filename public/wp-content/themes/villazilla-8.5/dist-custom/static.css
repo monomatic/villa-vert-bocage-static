@@ -1,0 +1,205 @@
+
+
+.u-block {
+  display: block;
+}
+
+a {
+	color: #d00;
+}
+a:hover {
+	color: #d00;
+}
+
+.textcontent-con {
+    margin-bottom: 0px;
+}
+
+.navbar-brand .site-name {
+    font-size: 1.4rem;
+}
+.navbar-brand .site-description {
+    font-size: 0.7rem;
+}
+
+@media (min-width: 50px) and (max-width: 1024px) {
+
+  .navbar-brand .site-name {
+      font-size: 1rem;
+  }
+  .navbar-brand .site-description {
+      font-size: 0.5rem;
+  }
+
+	
+}
+
+@media (min-width: 480px) and (max-width: 920px) {
+  #menu-main-menu a {
+    font-size: 0.8em;
+    padding-right: .3rem;
+    padding-left: .3rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 810px) {
+  #menu-main-menu a {
+    font-size: 0.75em;
+    padding-right: .3rem;
+    padding-left: .3rem;
+  }
+}
+
+@media (min-width: 50px) and (max-width: 760px) {
+  .secondary-nav {
+    display: none;
+  }
+}
+
+
+.image-grid .ig-block .ig-inner .ig-overlay .ig-overlay-bt a {
+    font-style: normal;
+    font-size: 14px;
+}
+
+.wc-bookings-booking-form {
+	    font-size: 13px;
+}
+
+.wc-bookings-date-picker .ui-datepicker td .ui-state-default {
+    font-size: 17px;
+}
+
+.form-row > span {
+	width: 100%;
+}
+
+
+
+
+/* ACCOUNT */
+
+.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--payment-methods {
+	display: none;
+}
+
+.woocommerce-Address {
+	width: 100%;
+	flex: 1;
+	max-width: 100%;
+}
+
+.u-column2.woocommerce-Address {
+	display: none;
+}
+
+.woocommerce-Address-title h3 {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.woocommerce-Address address {
+	font-size: 1em;
+}
+
+
+
+/* BLOG */
+
+
+body.blog h2.entry-title a,
+body.single h2.entry-title a {
+	font-size: 0.8em;
+    color: #333;
+    font-weight: bold;
+}
+
+.entry-title-pad {
+  padding-left: 16px;
+}
+
+time.updated {
+  xdisplay: block;
+  xfloat: left;
+  height: auto;
+  background: #fff;
+  text-align: center;
+  position: relative;
+  margin-left: 6px;
+  box-shadow: 0 0 3px #ccc;
+  margin-top: 10px;
+  margin-right: 12px;
+}
+
+
+time.updated .year {
+  background: #de3d29;
+  display: block;
+  padding: 3px;
+  padding-left: 0;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+  float: left;
+  height: 23px;
+}
+
+time.updated .month {
+  background: #de3d29;
+  display: block;
+  padding: 3px;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  float: left;
+  height: 23px;
+
+
+}
+
+time.updated .day {
+  display: block;
+  margin: 0;
+  padding: 3px 6px;
+  font-size: 0.8em;
+  font-weight: bold;
+  background: #fff;
+  position: relative;  
+  float: left;
+    height: 23px;
+
+
+}
+
+.entry-summary .author {
+  display: none;
+}
+
+
+#menu-footer-menu {
+  
+}
+
+#menu-footer-menu li {
+  float: left;
+  margin-right: 12px;
+}
+
+
+
+.facebook-follow {
+  color: #fff;
+  background: #4267b1;
+  border-radius: 2px;
+}
+
+.facebook-follow a {
+  color: #fff !important;
+  padding: 0px 6px !important;
+  margin: 0 !important;
+}
+
+.facebook-follow a:hover {
+  text-decoration: none !important;
+  background: #28487d !important;
+}
